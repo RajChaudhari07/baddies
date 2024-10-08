@@ -61,7 +61,7 @@ class _LoginFormState extends State<LoginForm> {
                 BoxShadow(
                   color: Colors.black,
                   blurRadius: 10,
-                  offset: Offset(0, 5),
+                  offset: Offset(0, 10),
                 ),
               ],
             ),
