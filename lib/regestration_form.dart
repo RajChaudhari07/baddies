@@ -70,6 +70,7 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
+                      height: -1,
                       color: Color.fromARGB(255, 185, 164, 105),
                     ),
                   ),
