@@ -76,6 +76,7 @@ class _LoginFormState extends State<LoginForm> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      letterSpacing: 7,
                       color: Color.fromARGB(255, 89, 143, 145),
                     ),
                   ),
