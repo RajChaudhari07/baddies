@@ -21,8 +21,7 @@ class _LoginFormState extends State<LoginForm> {
   void didChangeDependencies(){
     super.didChangeDependencies();
       final Map<String, dynamic>
-      arguments = 
-      ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
+      arguments = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
 
       emailFromProfile= arguments['email'];
       passwordFromProfile= arguments['password'];
@@ -53,7 +52,7 @@ class _LoginFormState extends State<LoginForm> {
           child: Container(
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.symmetric(
-              horizontal: 20
+              horizontal: 20.0
             ),
             decoration: BoxDecoration(
               color: Colors.white,

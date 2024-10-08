@@ -47,10 +47,10 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
           // Wrapping the form inside a Container with rounded edges and padding
           child: Container(
             padding:  const EdgeInsets.all(10),
-            margin: const EdgeInsets.symmetric(horizontal: 50), // Margin for side spacing
+            margin: const EdgeInsets.symmetric(horizontal: 200), // Margin for side spacing
             decoration: BoxDecoration(
               color: Colors.white, // Background color of the form
-              borderRadius: BorderRadius.circular(50), // Rounded corners
+              borderRadius: BorderRadius.circular(15), // Rounded corners
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
@@ -70,7 +70,8 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      height: -1,
+                      height: -2,
+                      letterSpacing: 8,
                       color: Color.fromARGB(255, 185, 164, 105),
                     ),
                   ),
