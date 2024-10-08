@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ProfileCreationForm extends StatefulWidget {
   const ProfileCreationForm({super.key});
@@ -16,14 +17,14 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
   String firstName = '';
   String lastName = '';
   DateTime? dob;
-  String gender = 'Male';
+  String gender = '';
   String city = '';
   String mobileNumber = '';
-  String role = 'User';
+  String role = 'Select Your Role';
   bool agreeToTerms = false;
 
   final List<String> genderOptions = ['Male', 'Female'];
-  final List<String> roleOptions = ['Admin', 'User', 'Player'];
+  final List<String> roleOptions = ['Select Your Role','Admin', 'User', 'Player'];
 
   void _submitProfile(){
     if(_formKey.currentState!.validate()){
@@ -45,15 +46,15 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
         child: SingleChildScrollView(
           // Wrapping the form inside a Container with rounded edges and padding
           child: Container(
-            padding:  const EdgeInsets.all(20),
-            margin: const EdgeInsets.symmetric(horizontal: 20), // Margin for side spacing
+            padding:  const EdgeInsets.all(10),
+            margin: const EdgeInsets.symmetric(horizontal: 50), // Margin for side spacing
             decoration: BoxDecoration(
               color: Colors.white, // Background color of the form
-              borderRadius: BorderRadius.circular(20), // Rounded corners
+              borderRadius: BorderRadius.circular(50), // Rounded corners
               boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
-                  blurRadius: 10, // Shadow blur
+                  blurRadius: 20, // Shadow blur
                   offset: Offset(0, 5), // Shadow position
                 ),
               ],
@@ -63,13 +64,13 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
               children: [
                 // Centering the title
                 const Padding (
-                  padding: EdgeInsets.symmetric(vertical: 20.0),
+                  padding: EdgeInsets.symmetric(vertical: 50.0),
                   child: Text(
                     'Profile Creation',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: Color.fromARGB(255, 185, 164, 105),
                     ),
                   ),
                 ),
@@ -178,12 +179,21 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
                       ),
                       TextFormField(
                         decoration:const InputDecoration(labelText: 'Mobile Number'),
-                        keyboardType: TextInputType.phone,
-                        onSaved: (value) {
-                          mobileNumber = value ?? '';
-                        },
+                        keyboardType: TextInputType.number,
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly,
+                        ],
                         validator: (value) {
-                          return value!.isEmpty ? 'Please enter your mobile number' : null;
+                          if(value==null || value.isEmpty){
+                            return'Please Enter your Mobile number';
+                          }
+                          else if (value.length!=10){
+                            return 'Mobile number must be 10 digits';
+                          }
+                          return null;
+                        },
+                        onSaved: (value) {
+                          mobileNumber = value!;
                         },
                       ),
                       DropdownButtonFormField<String>(
