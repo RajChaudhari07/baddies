@@ -14,18 +14,21 @@ class _LoginFormState extends State<LoginForm> {
 
   String email='';
   String password='';
+
+  String? emailFromProfile;
+  String? passwordFromProfile;
   @override
   void didChangeDependencies(){
     super.didChangeDependencies();
+      final Map<String, dynamic>
+      arguments = 
+      ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
 
-    final Map arguments = ModalRoute.of(context)?.settings.arguments as Map;
-
-    email= arguments['email']?? '';
-    password = arguments['password']?? '';
+      emailFromProfile= arguments['email'];
+      passwordFromProfile= arguments['password'];
     }
-
-  Future<void> _login() async {
-    if(email=='' && password == ''){
+    Future<void> _login() async {
+    if(email == emailFromProfile && password == passwordFromProfile){
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar
         (
           content:Text('Login Successfull'),
