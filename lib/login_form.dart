@@ -52,7 +52,7 @@ class _LoginFormState extends State<LoginForm> {
           child: Container(
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.symmetric(
-              horizontal: 50.0
+              horizontal: 20.0
             ),
             decoration: BoxDecoration(
               color: Colors.white,
