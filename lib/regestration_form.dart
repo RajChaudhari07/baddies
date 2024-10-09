@@ -227,10 +227,10 @@ class _ProfileCreationFormState extends State<ProfileCreationForm> {
                         controlAffinity: ListTileControlAffinity.leading,
                       ),
 
-                         ElevatedButton(
-                         onPressed: _submitProfile,
-                         child: const Text('Submit'),
-                    ), 
+                      ElevatedButton(
+                        onPressed: _submitProfile,
+                        child: const Text('Submit'),
+                      ), 
                     ],
                   ),
                 ),
