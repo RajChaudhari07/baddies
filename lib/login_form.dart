@@ -51,7 +51,7 @@ class _LoginFormState extends State<LoginForm> {
           child: Container(
             padding: const EdgeInsets.all(20),
             margin: const EdgeInsets.symmetric(
-              horizontal: 20
+              horizontal: 50
             ),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -76,7 +76,7 @@ class _LoginFormState extends State<LoginForm> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      letterSpacing: 7,
+                      letterSpacing: 8,
                       color: Color.fromARGB(255, 89, 143, 145),
                     ),
                   ),
